@@ -16,6 +16,8 @@ MQTT_PATH = "tele/Pi101/STATE"
 # 108-242
 # 243-350
 # Test git
+
+#Test2
 pixels = neopixel.NeoPixel(board.D18, 4)
 encoding = 'utf-8'
 rgb = [0,0,0,0,0,0,0,0,0,0,0,0,] # 0-2 Farbe1,3-5 Farbe2, 6-8 Farbe3, 9-11 Farbe4
