@@ -33,14 +33,16 @@ def on_message(client, userdata, message):
     msg=json.loads(decoded_message)
     anzahlZonen = msg['Zonen']
     tmp = msg['Farbe1']
-    print(str(tmp[0]) + str(tmp[1]))
+    r1 = int(str(tmp[0]) + str(tmp[1]))
+    print(r1)
+    
     if anzahlZonen == "1":
         print("1 Zone")
         print("Rot: " + str(rgb[0]))
         print("Gruen: " + str(rgb[1]))
         print("Blau: " + str(rgb[2]))
         rgb_werte(msg['Farbe1'])
-        pixels[0]= (str(tmp[0]) + str(tmp[1]),rgb[1],rgb[2])
+        pixels[0]= (rgb[0],rgb[1],rgb[2])
     if anzahlZonen == "2":
         print("2 Zonen")
         rgb_werte(msg['Farbe1'])
