@@ -3,8 +3,6 @@ import board
 import neopixel
 import time
 import json
-import sched
-
 
 MQTT_SERVER = "192.168.178.51"
 MQTT_PATH = "tele/Pi101/STATE"
@@ -74,15 +72,6 @@ def rgb_werte(hex_farbe):
     rgb[2] = int(prefix + hex_farbe[4] + hex_farbe [5],0)
     return rgb
     
-s = sched.scheduler(time.time, time.sleep)
-def do_something(sc): 
-    print("Doing stuff...")
-    # do your stuff
-    s.enter(10, 1, do_something, (sc,))
-
-s.enter(10, 1, do_something, (s,))
-s.run()
-
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
