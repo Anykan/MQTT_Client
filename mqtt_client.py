@@ -77,7 +77,7 @@ def rgb_werte(hex_farbe):
     
 def printit():
   threading.Timer(10.0, printit).start()
-  print "Hello, World!"
+  print ("Hello, World!")
   client.publish("tele/Pi101/LWT","Online")
 printit()
 
