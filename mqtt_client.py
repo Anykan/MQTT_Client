@@ -30,6 +30,7 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, message):
     decoded_message=str(message.payload.decode("utf-8"))
+    print(decoded_message)
     msg=json.loads(decoded_message)
     anzahlZonen = msg['Zonen']
     if anzahlZonen == "1":
