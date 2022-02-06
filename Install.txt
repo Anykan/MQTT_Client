@@ -9,3 +9,5 @@ sudo pip install paho-mqtt
 sudo apt-get install git-core
 sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel
 sudo python3 -m pip install --force-reinstall adafruit-blinka 
+
+git pull https://github.com/Anykan/MQTT_Client.git
