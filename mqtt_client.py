@@ -3,6 +3,9 @@ import board
 import neopixel
 import time
 import json
+import threading
+
+
 
 MQTT_SERVER = "192.168.178.51"
 MQTT_PATH = "tele/Pi101/STATE"
@@ -71,6 +74,13 @@ def rgb_werte(hex_farbe):
     rgb[1] = int(prefix + hex_farbe[2] + hex_farbe [3],0)
     rgb[2] = int(prefix + hex_farbe[4] + hex_farbe [5],0)
     return rgb
+    
+def printit():
+  threading.Timer(10.0, printit).start()
+  print "Hello, World!"
+  client.publish("tele/Pi101/LWT","Online")
+printit()
+
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message

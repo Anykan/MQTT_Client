@@ -1,0 +1,11 @@
+
+
+sudo apt-get install python3-pip
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install python3
+
+sudo pip install paho-mqtt
+sudo apt-get install git-core
+sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel
+sudo python3 -m pip install --force-reinstall adafruit-blinka 
