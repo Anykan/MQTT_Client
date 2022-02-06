@@ -3,8 +3,7 @@ import board
 import neopixel
 import time
 import json
-import threading
-
+import sched
 
 
 MQTT_SERVER = "192.168.178.51"
@@ -75,11 +74,14 @@ def rgb_werte(hex_farbe):
     rgb[2] = int(prefix + hex_farbe[4] + hex_farbe [5],0)
     return rgb
     
-#def printit():
-#  threading.Timer(10.0, printit).start()
-#  print ("Hello, World!")
-#  client.publish("tele/Pi101/LWT","Online")
-#printit()
+s = sched.scheduler(time.time, time.sleep)
+def do_something(sc): 
+    print("Doing stuff...")
+    # do your stuff
+    s.enter(10, 1, do_something, (sc,))
+
+s.enter(10, 1, do_something, (s,))
+s.run()
 
 client = mqtt.Client()
 client.on_connect = on_connect
