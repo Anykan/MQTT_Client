@@ -30,14 +30,13 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, message):
     decoded_message=str(message.payload.decode("utf-8"))
-    print(decoded_message)
     msg=json.loads(decoded_message)
     anzahlZonen = msg['Zonen']
     if anzahlZonen == "1":
         print("1 Zone")
-#        print("Rot: " + str(rgb[0]))
-#        print("Gruen: " + str(rgb[1]))
-#        print("Blau: " + str(rgb[2]))
+        print("Rot: " + str(rgb[0]))
+        print("Gruen: " + str(rgb[1]))
+        print("Blau: " + str(rgb[2]))
         rgb_werte(msg['Farbe1'])
         pixels[0]= (rgb[0],rgb[1],rgb[2])
     if anzahlZonen == "2":
