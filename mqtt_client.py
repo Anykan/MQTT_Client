@@ -40,7 +40,7 @@ def on_message(client, userdata, message):
         print("Gruen: " + str(rgb[1]))
         print("Blau: " + str(rgb[2]))
         rgb_werte(msg['Farbe1'])
-        pixels[0]= (rgb[0],rgb[1],rgb[2])
+        pixels[0]= (str(tmp[0]) + str(tmp[1]),rgb[1],rgb[2])
     if anzahlZonen == "2":
         print("2 Zonen")
         rgb_werte(msg['Farbe1'])
