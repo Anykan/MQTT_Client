@@ -3,15 +3,10 @@ import board
 import neopixel
 import time
 import json
-import configparser
-#test
-config = configparser.ConfigParser()
-config.read('config.ini')
 
-MQTT_SERVER = config['mqtt']['server']
-MQTT_PATH = config['mqtt']['path']
-LED_ANZ = int(config['led']['led'])
-LED_ZONEN = int(config['led']['zonen'])
+
+MQTT_SERVER = "192.168.178.50"
+MQTT_PATH = "tele/Pi1"
 # WZ Decke
 # 0-145 hinten
 # 146-295 rechts (Fenster)
@@ -21,7 +16,7 @@ LED_ZONEN = int(config['led']['zonen'])
 # 0-107 rechts TV
 # 108-242
 # 243-350
-pixels = neopixel.NeoPixel(board.D18, LED_ANZ)
+pixels = neopixel.NeoPixel(board.D18, 4)
 encoding = 'utf-8'
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
