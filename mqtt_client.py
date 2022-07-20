@@ -10,6 +10,7 @@ config.read('config.ini')
 
 MQTT_SERVER = config['mqtt']['server']
 MQTT_PATH = config['mqtt']['path']
+print(MQTT_SERVER)
 # WZ Decke
 # 0-145 hinten
 # 146-295 rechts (Fenster)
@@ -86,7 +87,7 @@ def rgb_werte(hex_farbe):
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
-client.will_set("tele/Pi101/LWT", payload="Offline")
+client.will_set(MQTT_PATH + "/LWT", payload="Offline")
 client.connect(MQTT_SERVER, 1883, 30)
  
 # Blocking call that processes network traffic, dispatches callbacks and
@@ -94,5 +95,5 @@ client.connect(MQTT_SERVER, 1883, 30)
 # Other loop*() functions are available that give a threaded interface and a
 # manual interface.
 
-client.publish("tele/Pi101/LWT","Online")
+client.publish(MQTT_PATH + "/LWT","Online")
 client.loop_forever()
