@@ -4,7 +4,7 @@ import neopixel
 import time
 import json
 
-MQTT_SERVER = "192.168.178.51"
+MQTT_SERVER = "192.168.178.50"
 MQTT_PATH = "tele/Pi101/STATE"
 # WZ Decke
 # 0-145 hinten
