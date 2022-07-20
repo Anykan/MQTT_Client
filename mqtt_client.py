@@ -3,9 +3,13 @@ import board
 import neopixel
 import time
 import json
+import configparser
 
-MQTT_SERVER = "192.168.178.50"
-MQTT_PATH = "tele/Pi101/STATE"
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+MQTT_SERVER = config['mqtt']['server']
+MQTT_PATH = config['mqtt']['path']
 # WZ Decke
 # 0-145 hinten
 # 146-295 rechts (Fenster)
