@@ -4,7 +4,7 @@ import neopixel
 import time
 import json
 import configparser
-
+#test
 config = configparser.ConfigParser()
 config.read('config.ini')
 
